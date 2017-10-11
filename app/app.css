@@ -52,15 +52,21 @@ ul li{
     margin-top:20px;
 }
 .loading{
+    position: absolute;
     background-image:url('spinner.gif');
-    background-position: bottom 50%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    height:1000px;
-    z-index: 9999;
-    overflow: hidden;
-
+    height:200px;
+    width:100%;
  }
+
+.loading.w{
+    background-position:20% 60%;
+}
+.loading.c{
+    background-position:65% 60%;
+
+}
 /*.loading {*/
     /*position: absolute;*/
     /*z-index: 999;*/

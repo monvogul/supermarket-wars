@@ -25,14 +25,13 @@
 
 <div class="row fadein fadeout" ng-show="searchResults.woolies" >
     <div class="col-md-6">
-        <div class="container-fluid">
+        <div class="container-fluid" style="position: relative">
             <div class="alert alert-info woolies">
             </div>
             <div ng-show="noResultsWoolies" class="h3">
                 No Results found for {{searchTerm}}
             </div>
-            <div ng-show="isLoadingWoolies" class="loading">
-
+            <div  ng-show="isLoadingWoolies" class="loading w">
             </div>
             <ul class="pagination spacer">
                 <li ng-repeat="i in getNumber(woolies.pages)  track by $index " ng-class="woolies.activePage===($index) ? 'active': ''"  ng-click="[woolies.activePage = ($index),search('woolies')] ">
@@ -52,13 +51,13 @@
 
 
     <div class="col-md-6 ">
-        <div class="container-fluid">
+        <div class="container-fluid" style="position: relative;">
             <div class="alert alert-info coles">
             </div>
             <div ng-show="noResultsColes" class="h3">
                 No Results found for {{searchTerm}}
             </div>
-            <div ng-show="isLoadingColes" class="loading">
+            <div ng-show="isLoadingColes" class="loading c">
 
             </div>
             <ul class="pagination spacer">
