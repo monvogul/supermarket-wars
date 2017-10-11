@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Supermarket Comparison</title>
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-heading"> Supermarket Wars</div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
+        <input type="text" ng-model="searchTerm" style="width:70%" placeholder="Search for a Product" ng-keypress="[noResultsWoolies=false , noResultsColes=false]"/>
+        <button class="btn btn-info" ng-click="search()">Search</button>
+        <button class="btn btn-default" ng-click="clear()">Clear</button>
+    </div>
+</div>
+<h4 ng-show="!searchResults.woolies.length && !searchResults.coles.length" class="well"> Please Search for a
+    product </h4>
+
+<div class="row fadein fadeout" ng-show="searchResults.woolies" >
+    <div class="col-md-6">
+        <div class="container-fluid">
+            <div class="alert alert-info woolies">
+            </div>
+            <div ng-show="noResultsWoolies" class="h3">
+                No Results found for {{searchTerm}}
+            </div>
+            <div ng-show="isLoadingWoolies" class="loading">
+
+            </div>
+            <ul class="pagination spacer">
+                <li ng-repeat="i in getNumber(woolies.pages)  track by $index " ng-class="woolies.activePage===($index) ? 'active': ''"  ng-click="[woolies.activePage = ($index),search('woolies')] ">
+                    <a href="#">{{$index+1}}</a>
+                </li>
+            </ul>
+            <ul class="list-group" ng-if="searchResults.woolies.length > 0 ">
+                <li ng-repeat="w in searchResults.woolies | orderBy: 'name' " class="list-group-item">
+                    <span class="productDesc">{{w.name}} </span>
+                    <image ng-src="{{w.img}}" width="100px" height="auto"/>
+                    <span class="productPrice">{{w.price | currency}}</span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 ">
+        <div class="container-fluid">
+            <div class="alert alert-info coles">
+            </div>
+            <div ng-show="noResultsColes" class="h3">
+                No Results found for {{searchTerm}}
+            </div>
+            <div ng-show="isLoadingColes" class="loading">
+
+            </div>
+            <ul class="pagination spacer">
+                <li ng-repeat="i in getNumber(coles.pages)  track by $index " ng-class="coles.activePage===($index) ? 'active': ''"  ng-click="[coles.activePage = ($index),search('coles')] ">
+                    <a href="#">{{$index+1}}</a>
+                </li>
+           </ul>
+            <ul class="list-group" ng-if="searchResults.coles.length > 0 ">
+                <li ng-repeat="w in searchResults.coles | orderBy: 'name' " class="list-group-item">
+                    <span class="productDesc">{{w.name}} </span>
+                    <image ng-src="{{w.img}}" width="100px" height="auto"/>
+                    <span class="productPrice">{{w.price | currency}}</span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="static/app.css" rel="stylesheet"/>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="static/app.js"></script>
+<script src="static/util.js"></script>
+</body>
+</html>
+

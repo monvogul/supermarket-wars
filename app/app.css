@@ -1,0 +1,99 @@
+.productDesc
+{display: block;
+font-size: 14px;
+font-family: 'Fresh Sans',Helvetica,Arial,sans-serif;
+color: #39464e;
+margin: 0 20px;
+line-height: 1.4;
+    font-weight: 700;
+}
+.productPrice{
+    letter-spacing: -1px;
+    white-space: nowrap;
+    padding:1em;
+    color: #39464e;
+    line-height: 1;
+    font-size: 26px;
+    top: 3px;
+}
+
+.fadein,
+.fadeout {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    display: block !important;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+    display: block !important;
+}
+
+
+ul>li:nth-child(even){
+    background-color: #fff;
+}
+ul>li:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+ul li{
+    min-height: 170px ;
+}
+.alert{
+    margin-top:20px;
+}
+.loading{
+    background-image:url('spinner.gif');
+    background-position: bottom 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height:1000px;
+    z-index: 9999;
+    overflow: hidden;
+
+ }
+/*.loading {*/
+    /*position: absolute;*/
+    /*z-index: 999;*/
+    /*margin: 100px auto;*/
+    /*font-size: 50px;*/
+    /*text-align: center;*/
+    /*color: #39464e;*/
+    /*animation: loader 1s infinite linear;*/
+/*}*/
+/*@keyframes loader {*/
+    /*0% {opacity:0}*/
+    /*20% {opacity:1}*/
+    /*40% {opacity:0}*/
+    /*60% {opacity:1}*/
+    /*80% {opacity:0}*/
+    /*100% {opacity:1}*/
+/*}*/
+
+.woolies{
+    height:120px;
+    background-repeat:no-repeat;
+    background-position:40px -10px ;
+    background-image : url('http://www.midvalleyshoppingcentre.com.au/wp-content/uploads/2014/05/mid-valley-shopping-majors-logos-woolworths-cole.png');
+}
+
+
+.coles{
+    height:120px;
+    background-repeat:no-repeat;
+    background-position:40px -170px ;
+    background-image : url('http://www.midvalleyshoppingcentre.com.au/wp-content/uploads/2014/05/mid-valley-shopping-majors-logos-woolworths-cole.png');
+}
+
+.spacer{
+    min-height:2em;
+}
